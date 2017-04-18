@@ -79,6 +79,7 @@ describe('DELETE /api/v1/:id', () => {
       chai.request(server)
       .get('/api/v1/shows')
       .then( (shows) => {
+        console.log("hi there")
         res.should.have.status(200);
         res.should.be.json
         res.body.should.be.a('array');
@@ -92,7 +93,7 @@ describe('DELETE /api/v1/:id', () => {
         res.body[0].should.have.property('inProduction');
         res.body[0].inProduction.should.equal(false)
       });
-      
+
     });
   });
 });
